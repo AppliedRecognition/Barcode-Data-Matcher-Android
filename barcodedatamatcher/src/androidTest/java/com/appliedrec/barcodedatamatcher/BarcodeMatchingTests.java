@@ -24,7 +24,7 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 @RunWith(AndroidJUnit4.class)
-public class ExampleInstrumentedTest {
+public class BarcodeMatchingTests {
 
     @Test
     public void testStringDistance() throws Exception {
@@ -90,7 +90,7 @@ public class ExampleInstrumentedTest {
 
     @Test
     public void testBCDLMatching() throws Exception {
-        DocumentFrontPageData frontPage = createFrontPage("ROBERTO N", "BRONSTON", "942 WILDHOOD LANE\nWEST VANCOUVER, BC\nV7S 2H7", "1070412", "1927/04/01", "2020/04/31", null);
+        DocumentFrontPageData frontPage = createFrontPage("ROBERTO N", "BRONSTON", "942 WILDHOOD LANE\nWEST VANCOUVER BC  V7S 2H7", "1070412", "1927/04/01", "2020/04/31", null);
         float score = match("1", frontPage);
         assertEquals(1, score, 0);
     }

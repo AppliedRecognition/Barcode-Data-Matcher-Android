@@ -56,6 +56,9 @@ public class DocumentFrontPageData implements BarcodeMatching {
         if (data.getDocumentNumber() != null) {
             strings.add(new Pair<>(this.documentNumber, data.getDocumentNumber()));
         }
+        if (data.getAddress() != null) {
+            strings.add(new Pair<>(this.address, data.getAddress()));
+        }
         float stringScore = 0;
         for (Pair<String, String> pair : strings) {
             if (pair.second == null) {
