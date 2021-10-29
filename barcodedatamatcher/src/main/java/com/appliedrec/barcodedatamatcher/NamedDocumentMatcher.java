@@ -41,7 +41,7 @@ public class NamedDocumentMatcher extends BaseDocumentMatcher {
         }
         float stringScore = 0;
         for (Pair<String, String> pair : stringPairs) {
-            stringScore += StringMatcher.match(pair.first, pair.second);
+            stringScore += StringMatcher.match(pair.first.replaceAll("\\W+", " "), pair.second.replaceAll("\\W+", " "));
         }
         return stringScore / stringPairs.size();
     }

@@ -15,6 +15,6 @@ public class AddressedDocumentMatcher extends BaseDocumentMatcher {
         if (data.getAddress() == null) {
             return 0;
         }
-        return StringMatcher.match(this.address.replaceAll("[\n,]", " "), data.getAddress().replaceAll("[\n,]", " "));
+        return StringMatcher.match(this.address.replaceAll("\\W+", " "), data.getAddress().replaceAll("\\W+", " "));
     }
 }

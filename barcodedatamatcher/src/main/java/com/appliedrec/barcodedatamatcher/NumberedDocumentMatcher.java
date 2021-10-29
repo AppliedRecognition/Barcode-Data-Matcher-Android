@@ -17,6 +17,6 @@ public class NumberedDocumentMatcher extends BaseDocumentMatcher {
         if (documentData.getDocumentNumber() == null) {
             return 0;
         }
-        return StringMatcher.match(documentNumber.toLowerCase(Locale.ROOT), documentData.getDocumentNumber().toLowerCase(Locale.ROOT));
+        return StringMatcher.match(documentNumber.replaceAll("\\W+", " "), documentData.getDocumentNumber().replaceAll("\\W+", " "));
     }
 }
